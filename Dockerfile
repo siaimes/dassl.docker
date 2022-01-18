@@ -10,4 +10,4 @@ WORKDIR /Dassl.pytorch
 
 RUN pip install -r requirements.txt
 
-python setup.py develop
+RUN python setup.py develop
