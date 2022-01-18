@@ -6,7 +6,7 @@ WORKDIR /
 
 RUN git clone https://github.com/KaiyangZhou/Dassl.pytorch.git
 
-cd Dassl.pytorch
+WORKDIR /Dassl.pytorch
 
 RUN pip install -r requirements.txt
 
