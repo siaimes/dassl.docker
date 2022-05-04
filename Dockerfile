@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel AS builder
 
-RUN apt-key del 7fa2af80 && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb && sudo dpkg -i cuda-keyring_1.0-1_all.deb
+RUN apt-key del 7fa2af80 && sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 
 WORKDIR /
 
@@ -16,7 +16,7 @@ RUN cp "Times New Roman"/* "Times-New-Roman/"
 
 FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel
 
-RUN apt-key del 7fa2af80 && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-keyring_1.0-1_all.deb && sudo dpkg -i cuda-keyring_1.0-1_all.deb
+RUN apt-key del 7fa2af80 && sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 
 RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future -c conda-forge
 
