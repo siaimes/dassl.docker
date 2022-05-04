@@ -22,7 +22,7 @@ RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown 
 
 RUN pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate
 
-RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git libstdc++6
 
 COPY --from=builder /Times-New-Roman/* /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
 
