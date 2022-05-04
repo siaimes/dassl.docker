@@ -1,4 +1,4 @@
-FROM siaimes/pytorch1.9.0:v1.4.7
+FROM siaimes/pytorch1.10.0:v1.0.1
 
 RUN apt-get update && apt-get install git -y
 
