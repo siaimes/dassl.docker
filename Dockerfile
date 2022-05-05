@@ -20,9 +20,9 @@ RUN apt-key del 7fa2af80 && apt-key adv --fetch-keys https://developer.download.
 
 RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git && apt --fix-broken install -y
 
-RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future -c conda-forge
+RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future -c conda-forge scipy libgcc
 
-RUN pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate flake8 yapf isort yacs gdown future scipy scikit-learn tqdm wheel mccabe
+RUN pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate tqdm wheel mccabe
 
 COPY --from=builder /Times-New-Roman/* /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
 
