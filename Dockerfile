@@ -22,16 +22,7 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano ps
 
 RUN conda install -y faiss-gpu scikit-learn pandas flake8 yapf isort yacs gdown future -c conda-forge
 
-RUN pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate
+RUN pip install opencv-python tb-nightly matplotlib pyro-ppl logger_tt tabulate flake yapf isort yacs gdown future scipy scikit-learn tqdm
 
 COPY --from=builder /Times-New-Roman/* /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/
 
-WORKDIR /
-
-RUN git clone https://github.com/KaiyangZhou/Dassl.pytorch.git
-
-WORKDIR /Dassl.pytorch
-
-RUN pip install -r requirements.txt
-
-RUN python setup.py develop
